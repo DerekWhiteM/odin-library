@@ -1,3 +1,7 @@
+html {
+    font-size: 16px;
+}
+
 .bookForm {
     z-index: 9999;
     position: absolute;
@@ -13,4 +17,27 @@
 .bookForm__content {
     background-color: white;
     margin: auto;
+}
+
+.library__button {
+    font-size: 1rem;
+    margin-top: 8px;
+    padding: 10px;
+}
+
+.library__items {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.library__item {
+    width: fit-content;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.library__item__remove {
+    padding: 5px;
+    width: 100%;
 }
