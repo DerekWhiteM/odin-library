@@ -37,6 +37,11 @@ html {
     padding: 15px;
 }
 
+.library__item__mark-read {
+    padding: 5px;
+    width: 100%;
+}
+
 .library__item__remove {
     padding: 5px;
     width: 100%;

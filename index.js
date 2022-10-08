@@ -26,10 +26,14 @@ function Book(props) {
         myLibrary.push(this);
         displayLibrary();
     };
+    this.toggleIsRead = function() {
+        this.isRead? this.isRead = false : this.isRead = true;
+        displayLibrary();
+    };
 }
 
-seedBooks.forEach(el => {
-    myLibrary.push(new Book(el));
+seedBooks.forEach(obj => {
+    myLibrary.push(new Book(obj));
 });
 
 function displayLibrary() {
@@ -48,6 +52,7 @@ function displayLibrary() {
                 <p>Author: ${book.author}</p>
                 <p>Read: ${book.isRead}</p>
             </div>
+            <button class="library__item__mark-read" data-index="${myLibrary.indexOf(book)}" onclick="toggleIsRead(this)">Toggle read</button>
             <button class="library__item__remove" data-index="${myLibrary.indexOf(book)}" onclick="handleRemove(this)">Remove</button>
         `;
         libraryItems.appendChild(element);
@@ -89,5 +94,12 @@ function handleRemove(btn) {
     myLibrary.splice(btn.dataset.index, 1);
     displayLibrary();
 };
+
+function toggleIsRead(btn) {
+    const book = myLibrary.find(el => {
+        return myLibrary.indexOf(el) == btn.dataset.index
+    });
+    book.toggleIsRead();
+}
 
 displayLibrary();
