@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="library">
+        <button class="library__button" onclick="Form.open()">New book</button>
+    </div>
+    <div class="bookForm">
+        <form id="bookForm" class="bookForm__content" action="#">
+            <h2 className="bookForm__title">New book</h2>
+            <div>
+                <label for="title">Title</label>
+                <input name="title">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input name="author">
+            </div>
+            <button onclick="Form.close()" type="button">Close</button>
+            <button onclick="Form.submit()" type="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
